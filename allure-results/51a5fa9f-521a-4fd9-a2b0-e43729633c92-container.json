@@ -1,0 +1,1 @@
+{"uuid":"51a5fa9f-521a-4fd9-a2b0-e43729633c92","name":"SeleniumPOM2023","children":["1216ec2d-7bb9-48e7-ac7b-adf059a23d5d"],"befores":[],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1680216174289,"stop":1680216174397}],"start":1680216107725,"stop":1680216174398}

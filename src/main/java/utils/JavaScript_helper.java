@@ -1,2 +1,4 @@
-package utils;public class JavaScript_helper {
+package utils;
+
+public class JavaScript_helper {
 }

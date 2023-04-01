@@ -1,2 +1,4 @@
-package utils;public class Properties_Reader {
+package utils;
+
+public class Properties_Reader {
 }

@@ -1,0 +1,1 @@
+{"uuid":"cb060b5e-3226-496d-8f6e-352b29b36c73","name":"VwoWeb_Test.openBrowser","children":["725aaba5-8d84-4c02-89cc-5a044490ac0a"],"description":"","befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1679965535114,"stop":1679965556173}],"afters":[],"start":1679965535114,"stop":1679965556173}
