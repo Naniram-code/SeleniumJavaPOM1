@@ -19,12 +19,11 @@ public class LoginTest extends Testbase {
     public LoginTest(){
         super();
         }
-
-        @Test(priority = 1,invocationCount = 1)//Repeat multiple time Test method
+        @Test(priority =2)
     @Owner("NaniRam")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verify Positive Login Page")
-    public void VwoAssignment5(){
+    public void PositiveLogin(){
             Loginpage loginpage=new Loginpage(driver);
             loginpage.LoginVwo("93npu2yyb0@esiix.com","Wingify@123");
             driver.manage().window().maximize();
@@ -40,6 +39,24 @@ public class LoginTest extends Testbase {
 
     }
 
+    @Test(priority = 2)
+    @Owner("NaniRam")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("End to End login and logout")
+    public void LogOut(){
+        Loginpage loginpage=new Loginpage(driver);
+        loginpage.LoginVwo("93npu2yyb0@esiix.com","Wingify@123");
+        driver.manage().window().maximize();
+        DashbordPage dashbordPage= new DashbordPage(driver);
+        String expectUserName=dashbordPage.loginUserName();
+       System.out.println("Dashboard UserName="+expectUserName);
+        Assert.assertEquals(expectUserName,"Wingify");
+        Loginpage loginback= dashbordPage.LogOutUserFromDashbord();
 
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        System.out.println("Login page Verification Text:"+loginpage.verificationMessage());
+        Assert.assertEquals(loginback.verificationMessage(),"SIGN IN TO VWO PLATFORM");
+
+    }
 
 }

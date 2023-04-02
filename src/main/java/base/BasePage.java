@@ -3,9 +3,12 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import page.web.WaitForHelper;
+
+import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver;
@@ -18,6 +21,11 @@ public class BasePage {
         new WaitForHelper(driver).presenceOfElement(elementLocation);
     }
     public void waitForLoading(){ new  WaitForHelper(driver).implicitWait();}
+    public void waitForTitle(String string){
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until((ExpectedConditions.titleIs(string)));
+    }
+
     public void click(By elementlocation){driver.findElement(elementlocation).click();}
     public void click(WebElement elementlocation){elementlocation.click();}
 

@@ -23,8 +23,7 @@ public class Loginpage extends BasePage {
                     By loginpageText=By.id("js-sign-in-heading");
                     By signIn=By.id("js-login-btn");
                    public  String verificationMessage(){
-                       WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
-                       wait.until((ExpectedConditions.titleIs("Login - VWO")));
+                       waitForTitle("Login - VWO");
                        return readText(loginpageText);}
 
                    public void inputusername(String email) {
