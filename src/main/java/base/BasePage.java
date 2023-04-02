@@ -7,11 +7,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.web.WaitForHelper;
+import utils.PropertyReaderOptimized;
 
 import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver;
+    /*public void switchToFrame() {
+        driver.switchTo().frame("mainpanel");
+    }*/
     public BasePage(WebDriver driver){this.driver=driver;}
     public void goTourl(String url)
     {

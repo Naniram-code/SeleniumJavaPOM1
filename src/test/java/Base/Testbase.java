@@ -1,5 +1,7 @@
 package Base;
 
+import base.BasePage;
+import common.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -9,10 +11,15 @@ import utils.DriverManager;
 public class Testbase extends DriverManager {
     public WebDriver driver;
     protected Testbase(){this.driver=super.getDriver();}
+
     @BeforeMethod
     public void setUp(){
+
         driver=new ChromeDriver();
+
     }
+
+
     @AfterMethod
         public void tearDown() {
             if (driver != null) {
