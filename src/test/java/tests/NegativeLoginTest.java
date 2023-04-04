@@ -36,7 +36,7 @@ public class NegativeLoginTest extends Testbase {
 		return data;
 	}
 	@Test(priority=1, dataProvider="getTestData")
-	public void validateCreateNewContact(String email, String password){
+	public void validateNegitiveLogin(String email, String password){
 		Loginpage loginpage=new Loginpage(driver);
 		loginpage.LoginVwo(email,password);
 		driver.manage().window().maximize();

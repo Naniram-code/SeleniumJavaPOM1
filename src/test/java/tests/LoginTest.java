@@ -30,14 +30,10 @@ public class LoginTest extends Testbase {
             Loginpage loginpage=new Loginpage(driver);
             loginpage.LoginVwo("93npu2yyb0@esiix.com","Wingify@123");
             driver.manage().window().maximize();
-            DashbordPage dashbordPage= new DashbordPage(driver);
+            DashbordPage dashbordPage= loginpage.aftersuccessfulLogin();
             String expectUserName=dashbordPage.loginUserName();
             System.out.println("Dashboard UserName="+expectUserName);
             Assert.assertEquals(expectUserName,"Wingify");
-
-
-
-
     }
 
     @Test(priority = 2)
@@ -48,7 +44,7 @@ public class LoginTest extends Testbase {
         Loginpage loginpage=new Loginpage(driver);
         loginpage.LoginVwo(Properties_Reader.readKey("username"),Properties_Reader.readKey("password"));
         driver.manage().window().maximize();
-        DashbordPage dashbordPage= new DashbordPage(driver);
+        DashbordPage dashbordPage=loginpage.aftersuccessfulLogin();
         String expectUserName=dashbordPage.loginUserName();
         System.out.println("Dashboard UserName="+expectUserName);
         Assert.assertEquals(expectUserName,"Wingify");

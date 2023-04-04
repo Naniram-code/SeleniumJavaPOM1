@@ -3,11 +3,6 @@ package page.web;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class Loginpage extends BasePage {
     WebDriver driver;
@@ -38,14 +33,14 @@ public class Loginpage extends BasePage {
                     public void loginclickButton(){
                      click(signIn);}
 
-    public DashbordPage LoginVwo(String email, String password)
+    public void LoginVwo(String email, String password)
     {
         goTourl("https://app.vwo.com");
         inputusername(email);
         inputpassword(password);
         Checkboxclick();
-        loginclickButton();
-    return new DashbordPage(driver);}
-
-    }
+        loginclickButton();}
+    public DashbordPage aftersuccessfulLogin(){
+                       return new DashbordPage(driver);}
+              }
 
